@@ -15,4 +15,5 @@ public class UserDto implements Serializable {
     private String lastName;
     private String phone;
     private String dni;
+    private String routingKey;
 }
