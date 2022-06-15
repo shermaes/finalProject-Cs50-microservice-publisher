@@ -21,8 +21,6 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 @Configuration
 public class CommandRouter {
 
-    @Autowired
-    ApplicationEventPublisher publisher;
 
     @Bean
     public RouterFunction<ServerResponse> postActionRoute(PostMessageToRabbitUseCase postMessageToRabbit){

@@ -19,4 +19,5 @@ public class CryptoCurrencyDto implements Serializable {
     private double quantity;
     private String userId;
     private String routingKey;
+
 }
