@@ -11,7 +11,7 @@ public class RabbitMQConfig {
     public static final String GENERAL_QUEUE = "action.general";
     public static final String SELL_QUEUE = "action.sell";
     public static final String BUY_QUEUE = "action.buy";
-
+    public static final String USER_QUEUE = "action.user";
 
     //nombre del exchange
     public static final String EXCHANGE = "actions_exchange";
@@ -21,6 +21,7 @@ public class RabbitMQConfig {
     public static final String GENERAL_ROUTING_KEY = "routingKey.*";
     public static final String SELL_ROUTING_KEY = "routingKey.sell";
     public static final String BUY_ROUTING_KEY = "routingKey.buy";
+    public static final String USER_ROUTING_KEY = "routingKey.user";
 
     @Bean
     public Queue getGeneralQueue() {
@@ -35,6 +36,11 @@ public class RabbitMQConfig {
     @Bean
     public Queue getBuyQueue() {
         return new Queue(BUY_QUEUE);
+    }
+
+    @Bean
+    public Queue getUserQueue() {
+        return new Queue(USER_QUEUE);
     }
 
     @Bean
@@ -55,6 +61,11 @@ public class RabbitMQConfig {
     @Bean
     public Binding BindingToBuyQueue() {
         return BindingBuilder.bind(getBuyQueue()).to(getTopicExchange()).with(BUY_ROUTING_KEY);
+    }
+
+    @Bean
+    public Binding BindingToUserQueue() {
+        return BindingBuilder.bind(getUserQueue()).to(getTopicExchange()).with(USER_ROUTING_KEY);
     }
 
 }
