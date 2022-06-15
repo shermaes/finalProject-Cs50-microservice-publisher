@@ -1,15 +1,23 @@
 #Get rich by buying and selling Crypto
+
 ####`Video Demo:` https://youtu.be/iMypnt1OQWE
+
 ####`Description:` In this project the initial idea was to build a web application 
+
 ####that allowed the user to interact with cryptocurrencies, that way the person that is into this practice
+
 ####would be able to increase their ability to invest into the raising world of cryptos.
+
 ####In this project i am just sending the back end part of it that is divided en two
+
 ####microservices, the purpose of dividing this into two microservices was to practice
+
 ####the concepts of the AMQP protocol through Rabbit mq.
 
 ----
 
 ##Setup
+
 For you to be able to run this project locally you will have to open the /src folder
 the /resources forlder and in there change the credentials of your own remote AMQP service
 or delete the personalized configuration, so that it runs with the default credentials,
@@ -20,6 +28,7 @@ dependencies, and finally you fill by able to execute the service by running the
 in the /src folder and in the class, `MicroServiceReceiverPublisherApplication`.
 
 ##Project structure:
+
 `Config`Here you will find the configuration class where i set up everything related 
 with rabbit mq, the three different queues for the three different types of actions, tha are general actions,
 selling actions and buying actions; the topic exchange and and the three different routing keys that
